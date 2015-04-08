@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>chosenken</groupId>
   <artifactId>BrainFcuk2Java</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1</version>
   <name>BrainFcuk2Java</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -15,6 +15,45 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+	  <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.6</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>org.ken.brainfcuk.BrainFcuk2Java</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-assembly-plugin</artifactId>
+		<version>2.5.3</version>
+		<configuration>
+			<descriptorRefs>
+				<descriptorRef>jar-with-dependencies</descriptorRef>
+			</descriptorRefs>
+			<archive>
+			  <manifest>
+				<mainClass>org.ken.brainfcuk.BrainFcuk2Java</mainClass>
+			  </manifest>
+			</archive>
+		</configuration>
+		<executions>
+		  <execution>
+			<id>make-assembly</id>
+			<phase>package</phase> 
+			<goals>
+				<goal>single</goal>
+			</goals>
+		  </execution>
+		</executions>
+	</plugin>
     </plugins>
   </build>
   <dependencies>
