@@ -23,6 +23,6 @@ Right now "," is not working as the created java code isn't reading in character
 How does it work?
 --------
 
-The application is actually quite simple.  It reads in the passed in BrainFuck source file and processes the file opcode to opcode.  It ignores none BrainFuck characters (=-<>[],.), creatinga stack of opcodes which then get translated into java code.  It does perform some minor optimizations, primarily condensing additions/subtractions and pointer moves.  
+The application is actually quite simple.  It reads in the passed in BrainFuck source file and processes the file opcode to opcode.  It ignores none BrainFuck characters (+-<>[],.), creatinga stack of opcodes which then get translated into java code.  It does perform some minor optimizations, primarily condensing additions/subtractions and pointer moves.  
 
 If you include the -S command, along with the compiled class you will also receive the java source code, pre-formatted.
